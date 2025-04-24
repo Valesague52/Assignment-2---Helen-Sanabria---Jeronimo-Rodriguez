@@ -1,0 +1,22 @@
+> :load prelude.lam
+> succ
+\n f x. f (n f x)
+> succ four
+\f x. f (f (f (f (f x))))
+> let t = plus two three
+> t
+\f x. f (f (f (f (f x))))
+> succ t
+\f x. f (f (f (f (f (f x)))))
+> pred
+\n f x. n (\g h. h (g f)) (\u. x) (\u. u)
+> pred seven
+\f x. f (f (f (f (f (f x)))))
+> pred t
+\f x. f (f (f (f x)))
+> iszero
+\m. m (\x t_0 f. f) true
+> iszero t
+false
+> iszero zero
+true
